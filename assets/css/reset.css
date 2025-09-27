@@ -137,3 +137,20 @@ table {
 * {
   box-sizing: border-box;
 }
+
+:root {
+  --primary-font: "Playfair Display", serif;
+  --secondary-font: "Poppins", sans-serif;
+  --primary-font-color: #333333;
+  --secondary-font-color: #555555;
+  --navbar-bg-color: #fdfdfd;
+  --home-bg-first-color: #d0f0fd;
+  --home-bg-second-color: #ffe4e6;
+  --home-button-color: #f6a6b2;
+  --about-bg-color: #fff5f6;
+  --about-icon-border-first-color: #4cc8ff;
+  --about-icon-border-second-color: #f6a6b2;
+  --skills-bg-color: #fff9fa;
+  --progetti-bg-color: #f5fbff;
+  --progetti-cards-color: #e8f8ff;
+}
