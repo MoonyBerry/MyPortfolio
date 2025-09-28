@@ -151,6 +151,8 @@ table {
   --about-icon-border-first-color: #4cc8ff;
   --about-icon-border-second-color: #f6a6b2;
   --skills-bg-color: #fff9fa;
+  --skills-cards-odd-hover: #ffd3d6a7;
+  --skills-cards-even-hover: #a9e7ffa7;
   --progetti-bg-color: #f5fbff;
   --progetti-cards-color: #e8f8ff;
 }
