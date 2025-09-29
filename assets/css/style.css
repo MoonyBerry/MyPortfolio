@@ -127,7 +127,8 @@ div#home button:hover {
 
 /* ABOUT SECTION */
 section#about,
-section#skills {
+section#skills,
+section#progetti {
   width: 100%;
   min-height: 80vh;
   background-color: var(--about-bg-color);
@@ -138,7 +139,8 @@ section#skills {
 }
 
 div.about-container,
-div.skills-container {
+div.skills-container,
+div.progetti-container {
   width: 70%;
   display: flex;
   justify-content: center;
@@ -152,7 +154,8 @@ div.about-description {
 }
 
 div.about-description h2,
-div.skills-container h2 {
+div.skills-container h2,
+div.progetti-container h2 {
   font-family: var(--primary-font);
   font-size: 2.5rem;
   font-weight: 700;
@@ -314,11 +317,133 @@ div.skills-container p {
   text-align: center;
 }
 
+/* PROGETTI SECTION */
+section#progetti {
+  background-color: var(--progetti-bg-color);
+}
+
+div.progetti-container {
+  flex-direction: column;
+  width: 100%;
+}
+
+div.progetti-cards-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* sempre flex-start per lo scroll */
+  width: 100%;
+  height: 700px;
+  padding: 10px calc(50% - 250px); /* 250px = metà della larghezza della card */
+  overflow-x: auto;
+  cursor: grab;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+div.progetti-cards-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+div.progetti-cards-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+div.progetto-card {
+  width: 500px;
+  min-width: 500px;
+  height: 600px;
+  background-color: var(--progetti-cards-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 20px;
+  border-radius: 16px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.5s ease;
+  margin: 0 10px;
+}
+div.progetto-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    0deg,
+    transparent,
+    transparent 30%,
+    rgb(255, 255, 255)
+  );
+  transform: rotate(-45deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+div.progetto-card:hover {
+  transform: scale(1.03);
+}
+
+div.progetto-card:hover::before {
+  opacity: 1;
+  transform: rotate(-45deg) translateY(100%);
+}
+
+div.progetto-card h3 {
+  font-family: var(--secondary-font);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: black;
+}
+
+div.progetto-card img {
+  width: 100%;
+  height: 50%;
+  align-self: center;
+  border-radius: 16px;
+  margin: 10px 0;
+}
+
+div.progetto-card p {
+  font-family: var(--secondary-font);
+  font-size: 0.875rem;
+  color: var(--secondary-font-color);
+  line-height: 1.5;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+div.tags-container {
+  display: flex;
+  gap: 20px;
+}
+
+div.tags-container div {
+  width: 15%;
+  padding: 7px 0;
+  text-align: center;
+  border: 2px solid var(--about-icon-border-first-color);
+  border-radius: 8px;
+  font-family: var(--secondary-font);
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--about-icon-border-first-color);
+}
+
 /* MEDIA QUERY */
 @media screen and (min-width: 2300px) {
   /* ABOUT SECTION */
   div.about-container {
     width: 40%;
+  }
+
+  /* SKILLS SECTION */
+  div.skills-cards-container {
+    margin: 50px 0;
   }
 }
 
@@ -405,7 +530,8 @@ div.skills-container p {
 
   /* ABOUT SECTION */
   section#about,
-  section#skills {
+  section#skills,
+  section#progetti {
     height: 100vh;
   }
 
@@ -454,12 +580,46 @@ div.skills-container p {
     font-size: 1.55rem;
   }
 
-  div.skills-container h2 {
+  div.skills-container h2,
+  div.progetti-container h2 {
     margin-bottom: 0;
     font-size: 2rem;
   }
 
   div.skills-container p {
+    display: none;
+  }
+
+  /* PROGETTI SECTION */
+  div.progetti-container {
+    gap: 10px;
+  }
+
+  div.progetti-cards-container {
+    height: 600px;
+  }
+
+  div.progetto-card {
+    min-width: 90%;
+    height: auto;
+    padding: 10px;
+    gap: 5px;
+  }
+
+  div.progetto-card img {
+    height: auto;
+  }
+
+  div.progetto-card h3 {
+    font-size: 1rem;
+  }
+
+  div.progetto-card p {
+    margin-bottom: 0;
+    font-size: 0.75rem;
+  }
+
+  div.tags-container {
     display: none;
   }
 }
