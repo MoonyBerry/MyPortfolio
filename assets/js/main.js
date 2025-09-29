@@ -32,6 +32,7 @@ let progettiCards = [
   {
     title: "Coolors Clone",
     preview: "coolors",
+    repoLink: "Coolors-We1",
     description:
       "Coolors Clone è una web app che permette di generare palette di colori armoniose in modo rapido e intuitivo. È possibile bloccare i colori preferiti, rigenerare quelli restanti e copiare facilmente i codici HEX da usare nei progetti.",
     tags: ["HTML", "CSS", "JS"],
@@ -45,7 +46,7 @@ function getTags(tags) {
 progettiCards.forEach((progetto) => {
   let newProgetto = document.createElement("div");
   newProgetto.innerHTML =
-    `<h3>${progetto.title}</h3><img src='../assets/img/progetti-img/${progetto.preview}-preview.png' alt='preview of ${progetto.title}' title='preview of ${progetto.title}'/><p>${progetto.description}</p><div class='tags-container'>` +
+    `<h3>${progetto.title}</h3><a href='https://github.com/MoonyBerry/${progetto.repoLink}' target='_blank'><img src='../assets/img/progetti-img/${progetto.preview}-preview.png' alt='preview of ${progetto.title}' title='preview of ${progetto.title}'/></a><p>${progetto.description}</p><div class='tags-container'>` +
     getTags(progetto.tags) +
     `</div>`;
   newProgetto.classList.add("progetto-card");
