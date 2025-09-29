@@ -83,3 +83,33 @@ slider.addEventListener("mousemove", move, false);
 slider.addEventListener("mousedown", startDragging, false);
 slider.addEventListener("mouseup", stopDragging, false);
 slider.addEventListener("mouseleave", stopDragging, false);
+
+/* SENDING EMAIL */
+function sendMail() {
+  let params = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value,
+  };
+
+  const serviceID = "service_2i9ddfe";
+  const templateID = "template_lkjfd0h";
+
+  emailjs
+    .send(serviceID, templateID, params)
+    .then((res) => {
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("message").value = "";
+      console.log(res);
+      alert("your message sent successfully");
+    })
+    .catch((err) => console.log(err));
+}
+
+const $contattiForm = document.querySelector("form.contatti-form");
+
+$contattiForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  sendMail();
+});
