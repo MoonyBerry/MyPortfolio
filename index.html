@@ -50,7 +50,7 @@
     <div id="home" class="hero">
       <h1>Martina Tarantino</h1>
       <h2>Front End Web Developer</h2>
-      <button type="button">Scopri i miei progetti</button>
+      <a href="#progetti"> Scopri i miei progetti </a>
     </div>
     <!--MAIN-->
     <main class="portfolio-main">
@@ -91,7 +91,91 @@
           <div class="progetti-cards-container"></div>
         </div>
       </section>
+      <section id="contatti">
+        <div class="contatti-container">
+          <h2>Contatti</h2>
+          <div class="contatti-content">
+            <div class="contatti-info">
+              <img class="my-photo" src="assets/img/foto-cv.jpg" />
+              <div>
+                <h3>Martina | Font-End Developer</h3>
+                <q> "Frontend è come unire logica con creatività" </q>
+              </div>
+              <div class="logo-contatti-container">
+                <a href="https://github.com/MoonyBerry" target="_blank"
+                  ><img
+                    src="assets/img/contatti-icon/github-icon.svg"
+                    alt="github icon with profile link"
+                    title="github icon with profile link"
+                /></a>
+                <a href="mailto:@martinatarantino02@gmail.com"
+                  ><img
+                    src="assets/img/contatti-icon/email-icon.svg"
+                    alt="e-mail icon with personal e-mail"
+                    title="e-mail icon with personal e-mail"
+                /></a>
+                <a
+                  href="https://www.linkedin.com/in/martina-tarantino-9646a3374/"
+                  target="_blank"
+                  ><img
+                    src="assets/img/contatti-icon/linkedin-icon.svg"
+                    alt="linkedin icon with profile link"
+                    title="linkedin icon with profile link"
+                /></a>
+              </div>
+            </div>
+            <form class="contatti-form">
+              <h3>Contattami</h3>
+              <div>
+                <label for="name">Nome e cognome:</label><br />
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Inerisci il tuo nome e cognome"
+                  required
+                />
+              </div>
+              <div>
+                <label for="email">E-mail:</label><br />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Inerisci la tua e-mail"
+                  required
+                />
+              </div>
+              <div>
+                <label for="message">Messaggio:</label><br />
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Scrivi qui il tuo testo..."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit">Invia</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <div class="portfolio-copyright">
+        © 2025 Martina. Tutti i diritti riservati.
+      </div>
     </main>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "RSeca6VgufK1PyYDM",
+        });
+      })();
+    </script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

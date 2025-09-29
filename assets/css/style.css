@@ -106,7 +106,7 @@ div#home h2 {
   padding: 0 10px;
 }
 
-div#home button {
+div#home a {
   width: 300px;
   height: 40px;
   background-color: var(--home-button-color);
@@ -118,9 +118,12 @@ div#home button {
   color: white;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   transition: transform 0.2s ease-in-out;
+  text-decoration: none;
+  text-align: center;
+  line-height: 2.4rem;
 }
 
-div#home button:hover {
+div#home a:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -128,7 +131,8 @@ div#home button:hover {
 /* ABOUT SECTION */
 section#about,
 section#skills,
-section#progetti {
+section#progetti,
+section#contatti {
   width: 100%;
   min-height: 80vh;
   background-color: var(--about-bg-color);
@@ -140,7 +144,8 @@ section#progetti {
 
 div.about-container,
 div.skills-container,
-div.progetti-container {
+div.progetti-container,
+div.contatti-container {
   width: 70%;
   display: flex;
   justify-content: center;
@@ -155,7 +160,8 @@ div.about-description {
 
 div.about-description h2,
 div.skills-container h2,
-div.progetti-container h2 {
+div.progetti-container h2,
+div.contatti-container h2 {
   font-family: var(--primary-font);
   font-size: 2.5rem;
   font-weight: 700;
@@ -174,7 +180,8 @@ div.skills-container p {
   line-height: 1.8;
 }
 
-div.about-container img {
+div.about-container img,
+div.contatti-info img.my-photo {
   width: 350px;
   height: 350px;
   border: 10px solid transparent;
@@ -439,6 +446,158 @@ div.tags-container div {
   color: var(--about-icon-border-first-color);
 }
 
+/* CONTATTI SECTION */
+section#contatti {
+  background-color: var(--progetti-cards-color);
+  height: calc(100vh - 40px);
+}
+
+div.contatti-container {
+  flex-direction: column;
+}
+
+div.contatti-content {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  width: 100%;
+}
+
+div.contatti-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  gap: 30px;
+  padding: 10px;
+}
+
+div.contatti-info img.my-photo {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border: 4px solid transparent;
+}
+
+div.contatti-info div {
+  text-align: center;
+  font-family: var(--secondary-font);
+  line-height: 2rem;
+}
+
+div.contatti-info div h3 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--primary-font-color);
+}
+
+div.contatti-info div q {
+  font-size: 1rem;
+  color: var(--secondary-font-color);
+}
+
+div.logo-contatti-container {
+  width: 100%;
+  word-spacing: 20px;
+}
+
+div.logo-contatti-container img {
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+}
+
+form.contatti-form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 10%;
+  font-family: var(--secondary-font);
+  color: var(--primary-font-color);
+}
+
+form.contatti-form input::placeholder,
+form.contatti-form textarea::placeholder {
+  font-family: var(--secondary-font);
+  color: var(--secondary-font-color);
+  font-size: 1rem;
+}
+
+form.contatti-form h3 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  align-self: center;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+form.contatti-form div {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+form.contatti-form label {
+  display: inline-block;
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+form.contatti-form input,
+form.contatti-form textarea {
+  width: 100%;
+  height: 50px;
+  border: 1px solid var(--secondary-font-color);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+form.contatti-form textarea {
+  height: 210px;
+  min-height: 210px;
+  max-height: 210px;
+  max-width: 100%;
+}
+
+form.contatti-form button {
+  align-self: center;
+  background-color: var(--about-icon-border-first-color);
+  color: white;
+  width: 50%;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  font-family: var(--primary-font);
+  font-size: 1.125rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease-in-out;
+}
+
+form.contatti-form button:hover,
+div.logo-contatti-container img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+div.portfolio-copyright {
+  background-color: var(--navbar-bg-color);
+  width: 100%;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  line-height: 3.5;
+  color: #777777;
+  font-family: var(--secondary-font);
+  font-size: 0.75rem;
+}
+
 /* MEDIA QUERY */
 @media screen and (min-width: 2300px) {
   /* ABOUT SECTION */
@@ -449,6 +608,11 @@ div.tags-container div {
   /* SKILLS SECTION */
   div.skills-cards-container {
     margin: 50px 0;
+  }
+
+  /* CONTATTI SECTION */
+  div.contatti-container {
+    width: 40%;
   }
 }
 
@@ -487,6 +651,41 @@ div.tags-container div {
 
   div.skills-cards-container {
     gap: 20px;
+  }
+
+  /* CONTATTI SECTION */
+  div.contatti-container {
+    width: 90%;
+  }
+
+  div.contatti-info {
+    width: 30%;
+  }
+
+  div.contatti-info img.my-photo {
+    width: 200px;
+    height: 200px;
+  }
+
+  div.contatti-info div {
+    line-height: 1.5;
+  }
+
+  div.contatti-info div h3 {
+    font-size: 1rem;
+  }
+
+  div.contatti-info div p {
+    font-size: 0.75rem;
+  }
+
+  div.contatti-info img {
+    width: 40px;
+  }
+
+  form.contatti-form {
+    width: 70%;
+    padding: 20px;
   }
 }
 
@@ -626,5 +825,53 @@ div.tags-container div {
 
   div.tags-container {
     display: none;
+  }
+
+  /* CONTATTI SECTION */
+  div.contatti-container h2 {
+    margin-bottom: 0;
+  }
+
+  div.contatti-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  div.contatti-info {
+    width: 100%;
+  }
+
+  div.contatti-info img.my-photo {
+    display: none;
+  }
+
+  form.contatti-form {
+    width: 100%;
+    padding: 0 10px 20px;
+  }
+
+  form.contatti-form h3 {
+    font-size: 1rem;
+  }
+
+  form.contatti-form label {
+    font-size: 0.75rem;
+    margin-bottom: 5px;
+  }
+
+  form.contatti-form input {
+    height: 30px;
+  }
+
+  form.contatti-form input::placeholder,
+  form.contatti-form textarea::placeholder {
+    font-family: var(--secondary-font);
+    color: var(--secondary-font-color);
+    font-size: 0.75rem;
+  }
+
+  form.contatti-form textarea {
+    min-height: 100px;
+    max-height: 100px;
   }
 }
