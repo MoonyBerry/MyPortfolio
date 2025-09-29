@@ -330,10 +330,10 @@ div.progetti-container {
 div.progetti-cards-container {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* sempre flex-start per lo scroll */
+  justify-content: flex-start;
   width: 100%;
   height: 700px;
-  padding: 10px calc(50% - 250px); /* 250px = metà della larghezza della card */
+  padding: 10px calc(50% - 250px);
   overflow-x: auto;
   cursor: grab;
 }
@@ -400,12 +400,17 @@ div.progetto-card h3 {
   color: black;
 }
 
-div.progetto-card img {
+div.progetto-card a {
   width: 100%;
   height: 50%;
   align-self: center;
-  border-radius: 16px;
   margin: 10px 0;
+}
+
+div.progetto-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
 }
 
 div.progetto-card p {
@@ -606,7 +611,7 @@ div.tags-container div {
     gap: 5px;
   }
 
-  div.progetto-card img {
+  div.progetto-card a {
     height: auto;
   }
 
