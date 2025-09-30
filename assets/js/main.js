@@ -113,3 +113,59 @@ $contattiForm.addEventListener("submit", (e) => {
   e.preventDefault();
   sendMail();
 });
+
+/* MAKING NAVBAR DISAPPEAR AND APPEAR ON SCROLL */
+const $mainNavbar = document.querySelector("nav.portfolio-navbar");
+
+let lastScrollTop = 0;
+
+window.addEventListener("scroll", () => {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollTop > lastScrollTop) {
+    $mainNavbar.classList.add("hide");
+  } else {
+    $mainNavbar.classList.remove("hide");
+  }
+
+  lastScrollTop = scrollTop;
+});
+
+/* OPEN AND CLOSING MOBILE NAVBAR */
+const $mobileNav = document.querySelector("nav.mobile-navbar");
+const $openMobileNavBtn = document.querySelector(
+  "nav.portfolio-navbar i.fa-bars"
+);
+const $closeMobileNavBtn = document.querySelector(
+  "nav.mobile-navbar i.fa-arrow-left"
+);
+const $mobileOverlay = document.querySelector("div.nav-mobile-overlay");
+const $navbarLinks = document.querySelectorAll(
+  "a.navbar-portfolio-link-mobile"
+);
+
+function openMobileNav() {
+  $mobileNav.classList.add("show");
+  $mobileOverlay.classList.add("show");
+  $mainNavbar.classList.add("hidden");
+}
+
+function closeMobileNav() {
+  $mobileNav.style.transform = "translateX(100%)";
+  $mobileOverlay.style.opacity = "0";
+
+  setTimeout(() => {
+    $mobileNav.classList.remove("show");
+    $mobileNav.style.transform = "";
+    $mobileOverlay.classList.remove("show");
+    $mobileOverlay.style.opacity = "";
+    $mainNavbar.classList.remove("hidden");
+  }, 200);
+}
+
+$openMobileNavBtn.addEventListener("click", openMobileNav);
+$closeMobileNavBtn.addEventListener("click", closeMobileNav);
+$mobileOverlay.addEventListener("click", closeMobileNav);
+$navbarLinks.forEach((navLink) => {
+  navLink.addEventListener("click", closeMobileNav);
+});

@@ -30,10 +30,10 @@
   <body>
     <!--HEADER NAVBAR-->
     <header>
-      <nav id="homepage" class="portfolio-navbar" aria-label="Main navigation">
-        <a class="navbar-logo" href="#homepage">MT</a>
+      <nav class="portfolio-navbar" aria-label="Main navigation">
+        <a class="navbar-logo" href="#home">MT</a>
         <ul>
-          <li><a class="navbar-portfolio-link" href="#homepage">Home</a></li>
+          <li><a class="navbar-portfolio-link" href="#home">Home</a></li>
           <li><a class="navbar-portfolio-link" href="#about">About</a></li>
           <li><a class="navbar-portfolio-link" href="#skills">Skills</a></li>
           <li>
@@ -45,7 +45,38 @@
         </ul>
         <i class="fa-solid fa-bars"></i>
       </nav>
+      <!--MOBILE NAVBAR-->
+      <div class="nav-mobile-overlay">
+        <nav class="mobile-navbar">
+          <div>
+            <i class="fa-solid fa-arrow-left" style="color: #333333"></i
+            ><a class="navbar-logo-mobile" href="#home">MT</a>
+          </div>
+          <ul>
+            <li>
+              <a class="navbar-portfolio-link-mobile" href="#home">Home</a>
+            </li>
+            <li>
+              <a class="navbar-portfolio-link-mobile" href="#about">About</a>
+            </li>
+            <li>
+              <a class="navbar-portfolio-link-mobile" href="#skills">Skills</a>
+            </li>
+            <li>
+              <a class="navbar-portfolio-link-mobile" href="#progetti"
+                >Progetti</a
+              >
+            </li>
+            <li>
+              <a class="navbar-portfolio-link-mobile" href="#contatti"
+                >Contatti</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
+
     <!--HOME HERO-->
     <div id="home" class="hero">
       <h1 class="hover-underline">Martina Tarantino</h1>
@@ -168,7 +199,7 @@
       </div>
     </main>
     <!--GO UP BUTTON-->
-    <a class="go-up-btn" href="#homepage"
+    <a class="go-up-btn" href="#home"
       ><i class="fa-solid fa-arrow-up" style="color: #ffffff"></i
     ></a>
 
