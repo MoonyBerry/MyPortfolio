@@ -30,10 +30,10 @@
   <body>
     <!--HEADER NAVBAR-->
     <header>
-      <nav class="portfolio-navbar" aria-label="Main navigation">
-        <a class="navbar-logo" href="#home">MT</a>
+      <nav id="homepage" class="portfolio-navbar" aria-label="Main navigation">
+        <a class="navbar-logo" href="#homepage">MT</a>
         <ul>
-          <li><a class="navbar-portfolio-link" href="#home">Home</a></li>
+          <li><a class="navbar-portfolio-link" href="#homepage">Home</a></li>
           <li><a class="navbar-portfolio-link" href="#about">About</a></li>
           <li><a class="navbar-portfolio-link" href="#skills">Skills</a></li>
           <li>
@@ -48,7 +48,7 @@
     </header>
     <!--HOME HERO-->
     <div id="home" class="hero">
-      <h1>Martina Tarantino</h1>
+      <h1 class="hover-underline">Martina Tarantino</h1>
       <h2>Front End Web Developer</h2>
       <a href="#progetti"> Scopri i miei progetti </a>
     </div>
@@ -78,6 +78,7 @@
           />
         </div>
       </section>
+      <!--SKILL SECTION-->
       <section id="skills">
         <div class="skills-container">
           <h2>Skills</h2>
@@ -85,12 +86,14 @@
           <p>Tutto quello che manca, sono pronta ad impararlo!</p>
         </div>
       </section>
+      <!--PROGETTI SECTION-->
       <section id="progetti">
         <div class="progetti-container">
           <h2>Progetti</h2>
           <div class="progetti-cards-container"></div>
         </div>
       </section>
+      <!--CONTATTI SECTION-->
       <section id="contatti">
         <div class="contatti-container">
           <h2>Contatti</h2>
@@ -164,6 +167,10 @@
         © 2025 Martina. Tutti i diritti riservati.
       </div>
     </main>
+    <!--GO UP BUTTON-->
+    <a class="go-up-btn" href="#homepage"
+      ><i class="fa-solid fa-arrow-up" style="color: #ffffff"></i
+    ></a>
 
     <script
       type="text/javascript"
