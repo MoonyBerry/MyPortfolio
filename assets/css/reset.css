@@ -109,6 +109,7 @@ section {
 }
 body {
   line-height: 1;
+  cursor: url("../img/cursor/default-cursor.svg") 12 12, auto;
 }
 ol,
 ul {
@@ -137,6 +138,17 @@ table {
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
+}
+
+a,
+a:hover,
+button,
+button:hover {
+  cursor: url("../img/cursor/pointer-cursor.svg") 12 12, auto;
+}
+
+label {
+  cursor: url("../img/cursor/default-cursor.svg") 12 12, auto;
 }
 
 :root {
