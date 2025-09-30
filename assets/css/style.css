@@ -738,6 +738,37 @@ div.portfolio-copyright {
   box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.05);
 }
 
+/* MESSAGE SENT */
+div.message-sent {
+  width: 200px;
+  height: 30px;
+  background: rgb(94, 208, 94);
+  border-radius: 16px;
+  position: fixed;
+  bottom: 100px;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  font-family: var(--secondary-font);
+  font-size: 1rem;
+  line-height: 1.7rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+div.message-sent i.fa-circle-check {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+}
+
+div.message-sent.showMessage {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+
 /* GO UP BUTTON */
 a.go-up-btn {
   background: linear-gradient(
@@ -792,6 +823,14 @@ a.go-up-btn:hover {
   div.contatti-info img.my-photo {
     width: 350px;
     height: 350px;
+  }
+
+  /* MESSAGE SENT */
+  div.message-sent {
+    width: 300px;
+    height: 35px;
+    line-height: 2rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -1076,5 +1115,10 @@ a.go-up-btn:hover {
 
   nav.mobile-navbar.show {
     transform: translateX(0);
+  }
+
+  /* MESSAGE SENT */
+  div.message-sent {
+    bottom: 45px;
   }
 }
