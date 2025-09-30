@@ -84,34 +84,89 @@ slider.addEventListener("mousedown", startDragging, false);
 slider.addEventListener("mouseup", stopDragging, false);
 slider.addEventListener("mouseleave", stopDragging, false);
 
-/* SENDING EMAIL */
-function sendMail() {
-  let params = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    message: document.getElementById("message").value,
-  };
+/* VALIDATING FORMS FIELDS */
+const $nameInput = document.getElementById("name");
+const nameExample = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
 
-  const serviceID = "service_2i9ddfe";
-  const templateID = "template_lkjfd0h";
+$nameInput.addEventListener("input", () => {
+  if (!$nameInput.value.trim() || !nameExample.test($nameInput.value)) {
+    $nameInput.setCustomValidity("Inserisci un nome ed un cognome validi!");
+  } else {
+    $nameInput.setCustomValidity("");
+  }
+});
 
-  emailjs
-    .send(serviceID, templateID, params)
-    .then((res) => {
-      document.getElementById("name").value = "";
-      document.getElementById("email").value = "";
-      document.getElementById("message").value = "";
-      console.log(res);
-      alert("your message sent successfully");
-    })
-    .catch((err) => console.log(err));
-}
+const $emailInput = document.getElementById("email");
+const emailExample = /^[\w.!#$%&'*+/=?^`{|}~-]+@[a-z\d-]+(?:\.[a-z\d-]+)*$/i;
 
-const $contattiForm = document.querySelector("form.contatti-form");
+$emailInput.addEventListener("input", () => {
+  if (
+    $emailInput.validity.typeMismatch ||
+    !$emailInput.value.trim() ||
+    !emailExample.test($emailInput.value)
+  ) {
+    $emailInput.setCustomValidity("Questa non è una email!");
+  } else {
+    $emailInput.setCustomValidity("");
+  }
+});
 
-$contattiForm.addEventListener("submit", (e) => {
+const $textarea = document.getElementById("message");
+
+$textarea.addEventListener("input", () => {
+  if (!$textarea.value.trim()) {
+    $textarea.setCustomValidity("Inserisci un messaggio valido!");
+  } else {
+    $textarea.setCustomValidity("");
+  }
+});
+
+/* MANAGE EMAILS */
+const $formContatti = document.querySelector(".contatti-form");
+
+$formContatti.addEventListener("submit", (e) => {
   e.preventDefault();
-  sendMail();
+
+  if (!$formContatti.checkValidity()) {
+    $formContatti.reportValidity();
+    return;
+  }
+
+  /* Preventing spams */
+  const minInterval = 24 * 60 * 60 * 1000; // 24 ore
+  const lastSubmit = localStorage.getItem("lastSubmit") || 0;
+  const now = Date.now();
+
+  if (now - lastSubmit < minInterval) {
+    alert("Puoi inviare il form solo una volta al giorno.");
+  } else {
+    localStorage.setItem("lastSubmit", now);
+
+    /* Send email with emailjs */
+    const params = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      message: document.getElementById("message").value,
+    };
+    const serviceID = "service_2i9ddfe";
+    const templateID = "template_lkjfd0h";
+
+    emailjs
+      .send(serviceID, templateID, params)
+      .then((res) => {
+        console.log(res);
+
+        /* Succes message */
+        const $successMessage = document.querySelector("div.message-sent");
+        $successMessage.classList.add("showMessage");
+        setTimeout(() => {
+          $successMessage.classList.remove("showMessage");
+        }, 3000);
+
+        $formContatti.reset();
+      })
+      .catch((err) => console.log(err));
+  }
 });
 
 /* MAKING NAVBAR DISAPPEAR AND APPEAR ON SCROLL */
