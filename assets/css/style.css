@@ -1,7 +1,7 @@
 /* CSS Portfolio */
 /* STYLING SCROLLBAR */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 15px;
 }
 
 /* Track */
@@ -17,6 +17,16 @@
     rgba(76, 200, 255, 1) 100%
   );
   border-radius: 100px;
+  border: 2px solid #f1f1f1;
+}
+
+/* Hover effect */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    360deg,
+    rgba(246, 140, 160, 1) 0%,
+    rgba(60, 180, 255, 1) 100%
+  );
 }
 
 /* HEADER */
@@ -36,7 +46,7 @@ nav.portfolio-navbar {
   background-color: var(--navbar-bg-color);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   padding: 25px;
   transition: clip-path 1s ease-in-out;
@@ -83,7 +93,7 @@ a.navbar-portfolio-link {
   position: relative;
 }
 
-i.fa-bars {
+button.navbar-toggle {
   display: none;
 }
 
@@ -131,6 +141,11 @@ nav.mobile-navbar div {
 a.navbar-logo-mobile {
   position: static;
   width: auto;
+}
+
+button.close-mobile-navbar {
+  border: none;
+  background: transparent;
 }
 
 nav.mobile-navbar i.fa-arrow-left {
@@ -926,12 +941,14 @@ a.go-up-btn:hover {
     display: none;
   }
 
-  i.fa-bars {
+  button.navbar-toggle {
     display: block;
     font-size: 1.5rem;
     color: var(--primary-font-color);
     position: absolute;
     right: 40px;
+    border: none;
+    background-color: transparent;
   }
 
   /* HOME */
@@ -956,8 +973,10 @@ a.go-up-btn:hover {
   /* ABOUT SECTION */
   section#about,
   section#skills,
-  section#progetti {
-    height: 100vh;
+  section#progetti,
+  section#contatti {
+    height: auto;
+    padding: 20px;
   }
 
   div.about-container {
@@ -1120,5 +1139,30 @@ a.go-up-btn:hover {
   /* MESSAGE SENT */
   div.message-sent {
     bottom: 45px;
+  }
+}
+
+/* MEDIA QUERY HORIZONTAL SCREENS*/
+@media screen and (max-height: 500px) {
+  nav.portfolio-navbar {
+    height: 50px;
+  }
+
+  section#about,
+  section#skills,
+  section#progetti,
+  section#contatti {
+    height: auto;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-height: 1000px) {
+  section#about,
+  section#skills,
+  section#progetti,
+  section#contatti {
+    height: auto;
+    padding: 40px;
   }
 }

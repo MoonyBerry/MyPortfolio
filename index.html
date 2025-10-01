@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Martina Tarantino - Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio di Martina Tarantino, Front End Web Developer. Scopri progetti, competenze e contattami se sei interessato."
+    />
     <!--Icon-->
     <link rel="icon" type="image/x-icon" href="assets/img/flower-icon.png" />
     <!--FontAwesome-->
@@ -33,7 +37,9 @@
       <nav class="portfolio-navbar" aria-label="Main navigation">
         <a class="navbar-logo" href="#home">MT</a>
         <ul>
-          <li><a class="navbar-portfolio-link" href="#home">Home</a></li>
+          <li>
+            <a class="navbar-portfolio-link" href="#home">Home</a>
+          </li>
           <li><a class="navbar-portfolio-link" href="#about">About</a></li>
           <li><a class="navbar-portfolio-link" href="#skills">Skills</a></li>
           <li>
@@ -43,14 +49,20 @@
             <a class="navbar-portfolio-link" href="#contatti">Contatti</a>
           </li>
         </ul>
-        <i class="fa-solid fa-bars"></i>
+        <!--BUTTON TO OPEN MOBILE NAVBAR-->
+        <button class="navbar-toggle" aria-label="Open mobile menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </nav>
       <!--MOBILE NAVBAR-->
       <div class="nav-mobile-overlay">
-        <nav class="mobile-navbar">
+        <nav class="mobile-navbar" aria-label="Mobile navigation">
           <div>
-            <i class="fa-solid fa-arrow-left" style="color: #333333"></i
-            ><a class="navbar-logo-mobile" href="#home">MT</a>
+            <!--BUTTON TO CLOSE MOBILE NAVBAR-->
+            <button class="close-mobile-navbar" aria-label="Close mobile menu">
+              <i class="fa-solid fa-arrow-left" style="color: #333333"></i>
+            </button>
+            <a class="navbar-logo-mobile" href="#home">MT</a>
           </div>
           <ul>
             <li>
@@ -137,17 +149,20 @@
                 title="my personal photo"
               />
               <div>
-                <h3>Martina | Font-End Developer</h3>
+                <h3>Martina | Front-End Developer</h3>
                 <q> "Frontend è come unire logica con creatività" </q>
               </div>
               <div class="logo-contatti-container">
-                <a href="https://github.com/MoonyBerry" target="_blank"
+                <a
+                  href="https://github.com/MoonyBerry"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   ><img
                     src="assets/img/contatti-icon/github-icon.svg"
                     alt="github icon with profile link"
                     title="github icon with profile link"
                 /></a>
-                <a href="mailto:@martinatarantino02@gmail.com"
+                <a href="mailto:martinatarantino02@gmail.com"
                   ><img
                     src="assets/img/contatti-icon/email-icon.svg"
                     alt="e-mail icon with personal e-mail"
@@ -156,6 +171,7 @@
                 <a
                   href="https://www.linkedin.com/in/martina-tarantino-9646a3374/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   ><img
                     src="assets/img/contatti-icon/linkedin-icon.svg"
                     alt="linkedin icon with profile link"
@@ -163,7 +179,8 @@
                 /></a>
               </div>
             </div>
-            <form class="contatti-form">
+            <!--CONTACT ME FORM-->
+            <form class="contatti-form" aria-label="Contact me form">
               <h3>Contattami</h3>
               <div>
                 <label for="name">Nome e cognome:</label><br />
@@ -171,7 +188,7 @@
                   type="text"
                   id="name"
                   name="name"
-                  placeholder="Inerisci il tuo nome e cognome"
+                  placeholder="Inserisci il tuo nome e cognome"
                   required
                 />
               </div>
@@ -181,7 +198,7 @@
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="Inerisci la tua e-mail"
+                  placeholder="Inserisci la tua e-mail"
                   required
                 />
               </div>
@@ -198,22 +215,24 @@
             </form>
           </div>
         </div>
-        <div class="message-sent">
+        <div class="message-sent" role="alert">
           Inviato!<i
             class="fa-solid fa-circle-check"
             style="color: #ffffff"
           ></i>
         </div>
       </section>
+      <!--COPYRIGHT-->
       <div class="portfolio-copyright">
         © 2025 Martina. Tutti i diritti riservati.
       </div>
     </main>
     <!--GO UP BUTTON-->
-    <a class="go-up-btn" href="#home"
+    <a class="go-up-btn" href="#home" aria-label="Go up to home"
       ><i class="fa-solid fa-arrow-up" style="color: #ffffff"></i
     ></a>
 
+    <!--JS EmailJS SCRIPT-->
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
@@ -225,6 +244,6 @@
         });
       })();
     </script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
 </html>
