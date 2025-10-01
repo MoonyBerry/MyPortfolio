@@ -3,6 +3,7 @@
 /* CREATING CARDS FOR SKILLS' SECTION */
 const $skillsContainer = document.querySelector("div.skills-cards-container");
 
+/* Array with skills cards data (name and icon) */
 let skillsCards = [
   { name: "HTML", icon: "html" },
   { name: "CSS", icon: "css" },
@@ -14,6 +15,7 @@ let skillsCards = [
   { name: "AGILE", icon: "agile" },
 ];
 
+/* Creating skills cards */
 skillsCards.forEach((skill) => {
   let newCard = document.createElement("div");
   newCard.innerHTML = `<img src='../assets/img/skills-icon/${skill.icon}-icon.svg' alt='icon ${skill.name}' title='icon ${skill.name}' /><h3>${skill.name}</h3>`;
@@ -28,6 +30,7 @@ const $progettiCardsContainer = document.querySelector(
   "div.progetti-cards-container"
 );
 
+/* Array with progettis cards data (title, preview, repo, description and tags) */
 let progettiCards = [
   {
     title: "Coolors Clone",
@@ -39,10 +42,12 @@ let progettiCards = [
   },
 ];
 
+/* Generating cards tags */
 function getTags(tags) {
   return tags.map((tag) => `<div>${tag}</div>`).join("");
 }
 
+/* Generating progettis cards */
 progettiCards.forEach((progetto) => {
   let newProgetto = document.createElement("div");
   newProgetto.innerHTML =
@@ -85,6 +90,7 @@ slider.addEventListener("mouseup", stopDragging, false);
 slider.addEventListener("mouseleave", stopDragging, false);
 
 /* VALIDATING FORMS FIELDS */
+/* Validating name input */
 const $nameInput = document.getElementById("name");
 const nameExample = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
 
@@ -96,6 +102,7 @@ $nameInput.addEventListener("input", () => {
   }
 });
 
+/* Validating email input */
 const $emailInput = document.getElementById("email");
 const emailExample = /^[\w.!#$%&'*+/=?^`{|}~-]+@[a-z\d-]+(?:\.[a-z\d-]+)*$/i;
 
@@ -111,6 +118,7 @@ $emailInput.addEventListener("input", () => {
   }
 });
 
+/* Validating textarea */
 const $textarea = document.getElementById("message");
 
 $textarea.addEventListener("input", () => {
