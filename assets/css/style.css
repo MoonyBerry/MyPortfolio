@@ -981,6 +981,7 @@ a.go-up-btn:hover {
 
   div.about-container {
     gap: 0%;
+    width: 90%;
   }
 
   div.about-description {
@@ -995,8 +996,6 @@ a.go-up-btn:hover {
 
   div.about-description p {
     font-size: 1rem;
-    max-height: 300px;
-    overflow: auto;
     line-height: 1.5;
   }
 
